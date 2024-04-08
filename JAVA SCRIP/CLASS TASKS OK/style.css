@@ -1,0 +1,30 @@
+/* body{
+    background-color: deepskyblue;
+    
+}
+
+#start.hover{
+        border: 100px;
+        border-radius: 30px;
+}
+#stop.hover{
+    border: 100px;
+border-radius: 30px;
+}
+#reset.hover{
+    border: 100px;
+    border-radius: 30px;
+} */
+
+
+
+body{
+    background-color: aquamarine;
+    gap: 100PX;
+}
+.STYLO.hover {
+display: flex;
+gap: 100px;}
+button{
+    gap: 100px;
+}

@@ -1,0 +1,37 @@
+
+ .container-fluid{
+    
+    
+} 
+.navbar{
+    word-spacing: 20px;
+    position:sticky;
+    top: 0;
+    z-index: 1;
+    }
+.card{
+    text-align: center;
+    justify-content: center;
+    
+}
+.s{
+    text-decoration: white;
+}
+body{
+    border: 0cap;
+    background-color: black;
+    
+}
+.card{
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    text-decoration: underline;
+    
+}
+.style{
+    text-decoration: white;
+    text-shadow: white;
+    
+}
+    
