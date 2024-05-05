@@ -24,11 +24,25 @@
 
 // Q = 4
 
-// var arr = ("Nokia","Samsung","Apple","Sony","Huawei")
+// var arr = ["Nokia","Samsung","Apple","Sony","Huawei"]
+// for(var i=0; i<arr.length;i++){
+//     console.log(arr[i])
+// }
+// Q = 5
+// var fruits = ["apple","banana","mango","orange","straberry"]
+// for(var i =0; i<fruits.length; i++)
+// console.log(`Element at index ${i} is ${fruits[i]}`)
+// Q = 6
+// var itmes=["Keyward","Mouse","flash drive","CPU"]
+// for(var i = 0;i<itmes.length;i++){
+//     alert(`Element value for index ${i}  ${itmes[i]}`)
+// }
+// // Q = 7
+           // COUNTING 1 TO 15
 
-
-
-
+// for(var i=1; i<=15; i++){
+//     document.write(i)
+// }
 
 
 

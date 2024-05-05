@@ -1,105 +1,79 @@
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
 
-    <div class="stopwatch"> 
-    <center>
-        <h1 class="mints">0</h1>    
-        <h1 class="secs">0</h1>    
-        <h1 class="milis">0</h1>    
-    </center>    
-</div>
+<h1>ToDo Application</h1>
 
-</div>
-<div>
-<center><button id="start" onclick="start">START</button></center><br>
-<center><button id="stop" onclick="stop">STOP</button></center><br>
-<center><button id="reset" onclick="reset">RESET</button></center><br>
 
-</div>
 
-    <Script src="app.JS"></Script>
+
+<input onclick="inp" type="text" name id="todoapplication">
+<button onclick=" deList  ">Click More</button>
+<button onclick="delall">Delete All</button>
+   
+<ul>
+</ul>
+  <!-- <li>stylooo</li>
+  <li>stylooo</li>
+  <li>stylooo</li> -->
+
+
+<!-- <script src="app.JS">
+
+</script>
+
 </body>
-</html>
- -->
-  
+</html> --> -->
 
-<!-- TRY -->
-<!-- 
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    
-  </head>
-  <body>
-      <center>
-        <h1>Stopwatch</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-
-      <div class="STYLO">
-        <h2 id="mints">0</h2>
-        <h2 id="secs">0</h2>
-        <h2 id="milisec">0</h2>
-
-    </div>
-
-    <button>Start</button><br>
-
-      <button>Stop</button><br>
-      
-      <button>Reset</button><br>
-    </center>
-
-
-    <script src="app.js"></script>
-  </body>
-</html>
-
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<body>
+  <input type="text" id="inp">
+  <input onclick="create()" type="button" id="btn" value="Add">
+  <button id="del" onclick="deleteall()">Delete All</button>
+  <ul id="list"></ul>
+ 
+ <script>
+ let inp = document.querySelector('#inp');
+ let del = document.querySelector('#del');
+ let list = document.querySelector('#list')
+ let btn = document.createElement("button")
+ let btn2 = document.createElement("button")
+ 
+ function create(){
+     let li = document.createElement('li');
+     li.innerHTML = inp.value;
+     list.appendChild(li);
+     inp.value = '';
+    btn.innerHTML = "Delete"
+    li.appendChild(btn)
+    btn.onclick = function(){
+        li.remove()
+    }
+ 
+    btn2.innerHTML = "Edit"
+    li.appendChild(btn2)
+    btn2.onclick = function(){
+     let text = prompt("enter what you write")
+        li.innerHTML  = text;
+    }
+ }
+ function deleteall(){
+     list.innerHTML = '';
+ }
+ </script>
+ </body>
+ </html>

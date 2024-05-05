@@ -1,0 +1,18 @@
+body{
+    background-color: orange;
+}
+
+#inc{
+    background-color: blue;
+    color: black;
+}
+
+#dec{
+    background-color: red;
+    color: black;
+}
+
+button{
+    width: 35px;
+    height: 35px;
+}
