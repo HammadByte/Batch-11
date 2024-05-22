@@ -1,49 +1,49 @@
 
 
-// // var milisec = 0
-// // var seconds = 0
-// // var minutes = 0
-// // var getHtmlmsec = document.getElementById('msec')
-// // var getHtmlsec = document.getElementById('sec')
-// // var getHtmlmin = document.getElementById('min')
+// var milisec = 0
+// var seconds = 0
+// var minutes = 0
+// var getHtmlmsec = document.getElementById('msec')
+// var getHtmlsec = document.getElementById('sec')
+// var getHtmlmin = document.getElementById('min')
 
-// // setInterval(function(){
-// //     milisec++
-// //     getHtmlmsec.innerHTML = milisec
-// //     if(milisec >= 100){
-// //         seconds++
-// //         getHtmlsec.innerHTML = seconds
-// //         milisec = 0
-// //     }
-
-
-
-// // },10)
-
-
-// // // TRY
+// setInterval(function(){
+//     milisec++
+//     getHtmlmsec.innerHTML = milisec
+//     if(milisec >= 100){
+//         seconds++
+//         getHtmlsec.innerHTML = seconds
+//         milisec = 0
+//     }
 
 
 
-// // var milisec = 0
-// // var seconds = 0
-// // var minutes = 0
-// // var getHtmlmsec = document.getElementById('milisec')
-// // var getHtmlsec = document.getElementById('secs')
-// // var getHtmlmin = document.getElementById('mints')
+// },10)
 
-// // setInterval(function(){
-// //     milisec++
-// //     getHtmlmsec.innerHTML = milisec
-// //     if(milisec >= 100){
-// //         seconds++
-// //         getHtmlsec.innerHTML = seconds
-// //         milisec = 0
-// //     }
+
+// TRY
 
 
 
-// // },10)
+// var milisec = 0
+// var seconds = 0
+// var minutes = 0
+// var getHtmlmsec = document.getElementById('milisec')
+// var getHtmlsec = document.getElementById('secs')
+// var getHtmlmin = document.getElementById('mints')
+
+// setInterval(function(){
+//     milisec++
+//     getHtmlmsec.innerHTML = milisec
+//     if(milisec >= 100){
+//         seconds++
+//         getHtmlsec.innerHTML = seconds
+//         milisec = 0
+//     }
+
+
+
+// },10)
 
 
 
@@ -157,9 +157,95 @@
 // }
 
 
+// var arr =[ {
+// p_model : 2024,
+// p_Name : 'bugatti',
+// Makevarientmodel : "400 kmbs in 30 second."
+// },
+// {
+//     p_model : '2021',
+//     p_Name : 'unique',
+//     p_specification : '100 kmbs in 20 second.'
+//     },
+//     {
+//         p_model : '2023',
+//         p_Name : 'Audi',
+//         p_specification : '100kmbs in 2.5 second'
+//         }
+    
+    
+// ]
+// var index = 0
 
+// for (var i = 0; i <arr.length; i++ ){
+//     console.log(arr[i].p_Name);
+// }
+var paras = document.getElementById("para")
+paras.innerText =  question
+var inp1 = document.getElementById("inp1")
+inp1.innerText = option1
+var inp2 = document.getElementById("inp2")
+inp2.innerText = option2
+var inp3 = document.getElementById("inp3")
+inp3.innerText = option3
+    
+var questions = [
+    {
+        question : 'What is HTML stand for ?',
+        option1 : 'Haper tect markup language.',
+        option2 : 'Hiper text markup language.',
+        option3 : 'in ma se koi be nhi.',
+    
+},
+{
+    question : 'What is CSS stand for ?',
+    option1 : 'Cak Cading Stylo Sheet.',
+    option2 : 'Cas Cading Style Sheet.',
+    option3 : 'Cake cating style sheet.',
 
+},
+{
+    question : 'What is JS stand for ?',
+    option1 : 'Not any one ',
+    option2 : 'Jaca Script.',
+    option3 : 'Java Script.',
 
+},
+{
+    question : 'What is Stylo stand for ?',
+    option1 : 'Muhammad Hammad.',
+    option2 : 'Muhammad Akram.',
+    option3 : 'Muhammad ASLAM.',
+
+},
+{
+    question : 'What is CM stand for ?',
+    option1 : 'Computer Maical.',
+    option2 : 'Computer Master.',
+    option3 : 'Computer Machenics.'
+
+}
+
+]
+
+function btnclk(){
+    if(arrayofobject > question.length ){
+        alert("Questuion Finish.")
+    }
+    else{
+        var paras = document.getElementById("para")
+        paras.innerText =  question
+        var inp1 = document.getElementById("inp1")
+        inp1.innerText = option1
+        var inp2 = document.getElementById("inp2")
+        inp2.innerText = option2
+        var inp3 = document.getElementById("inp3")
+        inp3.innerText = option3
+            
+    }
+}
+
+    
 
 
 

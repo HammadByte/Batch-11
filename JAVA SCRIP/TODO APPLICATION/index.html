@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo Application</title>
+ 
+  <style>
+   body{
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(81, 222, 168) ;
+    
+    margin: 0;
+    padding: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+    }
+    button{
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+   #btn{
+            border-radius: 30px;
+            background-color: lightgreen;
+            
+        }
+        #del{
+            border-radius: 30px;
+            background-color: lightsalmon;
+        }
+#inp{
+    border-radius: 30px;
+}
+#htn{
+    border: 1px solid black;
+    border-radius: 30px;
+}
+    
+  </style>
+</head>
+
+<body>
+   <div>
+    <div id="htn">
+        <input type="text" id="inp">
+    <input onclick="create()" type="button" id="btn" value="Add" placeholder="Enter your text">
+    <button id="del" onclick="deleteall()">Delete All</button>
+    <ol id="list"></ol>
+  </div>
+</div>
+     
+ <script>
+ let inp = document.querySelector('#inp');
+ let del = document.querySelector('#del');
+ let list = document.querySelector('#list')
+ let btn = document.createElement("button")
+ let btn2 = document.createElement("button")
+ 
+ function create(){
+     let li = document.createElement('li');
+     li.innerHTML = inp.value;
+     list.appendChild(li);
+     inp.value = '';
+    btn.innerHTML = "Delete"
+    li.appendChild(btn)
+    btn.onclick = function(){
+        li.remove()
+    }
+ 
+    btn2.innerHTML = "Edit"
+    li.appendChild(btn2)
+    btn2.onclick = function(){
+     let text = prompt("Put updated value.")
+        li.innerHTML  = text;
+    }
+ }
+ function deleteall(){
+     list.innerHTML = '';
+ }
+ 
+ </script>
+ </body>
+ </html> 

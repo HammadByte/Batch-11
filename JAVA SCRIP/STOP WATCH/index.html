@@ -1,35 +1,36 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stop watch</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+	<center>
+	<div>
+		<h1 id="mints">0</h1><span>:</span>
+		<h1 id="sceond">00</h1><span>:</span>
+		<h1 id="mn">00</h1><span>:</span>
 
+	</div>
+	</center>
 
 	<center>
-<div class="container">
-    <div class="card">
-		<div id="time"> 
-			<span class="digit" id="hr"> 00 :</span> 
-			<span class="digit" id="min">00 :</span> 
-			<span class="digit" id="sec"> 00 :</span> 
-			<span class="digit" id="count">00</span> 
-		</div> 
-		<div id="buttons"> 
-    
-			<button class="btn" id="start"> Start</button> 
-			<button class="btn" id="stop"> Stop</button> 
-			<button class="btn" id="reset"> Reset</button> 
-		</div> 
-    </div>
-</div>
+		<div>
+			<button class="start_btn" onclick="start()">start</button>
+			<button class="stop_btn" onclick="stop()">stop</button>
+			<button class="reset_btn" onclick="reset()">reset</button>
+	
+		</div>
+		</center>
+	
 
 
-</center>
-<script src="app.js">
-</script>
 
 
-</body></html>
+<script src="app.js"></script>
+
+</body>
+</html>

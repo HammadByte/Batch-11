@@ -1,46 +1,42 @@
-function daysUntilBakraEid() {
-    // Get the current date
-    const today = new Date();
+// function countdownToEidUlAdha() {
+//     // Set the date of Eid-ul-Adha (assuming it's on the 10th of Dhul-Hijjah)
+//     const eidUlAdhaDate = new Date("2024-06-28T00:00:00.000Z"); // adjust the date according to the Islamic calendar
   
-    // Calculate the Islamic date (Hijri date)
-    const hijriDate = hijrijs(today);
+//     // Get the current date and time
+//     var now = new Date();
   
-    // Get the current Islamic month and day
-    const hijriMonth = hijriDate.month;
-    const hijriDay = hijriDate.day;
+//     // Calculate the difference between the two dates
+// var  diff = eidUlAdhaDate.getTime() - now.getTime();
   
-    // Check if the current month is Dhu al-Hijjah
-    if (hijriMonth === 12) {
-      // If the current day is greater than 10, set the Eid date for next year
-      if (hijriDay > 10) {
-        hijriDate.year += 1;
-      }
-    } else {
-      // If the current month is not Dhu al-Hijjah, set the Eid date for this year
-      hijriDate.month = 12;
-      hijriDate.day = 10;
-    }
+//     // Calculate the number of days, hours, minutes, and seconds left
+//     var daysLeft = Math.floor(diff / (1000 * 60 * 60 * 24));
+//     var hoursLeft = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     var minutesLeft = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+//     var secondsLeft = Math.floor((diff % (1000 * 60)) / 1000);
   
-    // Convert the Hijri date back to a Gregorian date
-    const eidDate = gregorianjs(hijriDate);
-  
-    // Calculate the difference in days between today and Eid
-    const oneDay = 1000 * 60 * 60 * 24;
-    const daysLeft = Math.ceil((eidDate.getTime() - today.getTime()) / oneDay);
-  
-    return daysLeft;
-  }
-  
-  // Helper functions to convert between Gregorian and Hijri dates
-  function hijrijs(gregorianDate) {
-    // Implementation of the Hijri-Gregorian date conversion algorithm
-    // You can use a library like hijri-js or implement your own algorithm
-  }
-  
-  function gregorianjs(hijriDate) {
-    // Implementation of the Hijri-Gregorian date conversion algorithm
-    // You can use a library like hijri-js or implement your own algorithm
-  }
-  
-  // Example usage
-  console.log(daysUntilBakraEid() + " days left until Bakra Eid!");
+//     // Return the results
+//     return {
+//       days: daysLeft,
+//       minutes: minutesLeft,
+//       seconds: secondsLeft
+//     };
+//   }
+
+//   // Call the function and log the results
+//   var countdown = countdownToEidUlAdha();
+//   document.write(`There are "<br>"${countdown.days} days"<br>", ${countdown.minutes} minutes"<br>", and ${countdown.seconds} seconds "<br>"left until Eid-ul-Adha.`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
