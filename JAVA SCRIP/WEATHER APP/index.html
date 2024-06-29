@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App.</title>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input id="inp" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button onclick="btnclick" class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter a city">
+        <button id="searchButton">Search</button>
+        <div class="weather-info">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <ul id="forecast-list">
+                <!-- forecast list items will be generated here -->
+            </ul>
         </div>
-      </nav>
-
-      <div id="Weatherapp"></div>
-
-
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

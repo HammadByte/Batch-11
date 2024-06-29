@@ -1,56 +1,80 @@
-var display = document.getElementById('display');
-var keys = document.querySelectorAll('.keys button');
+let display = document.getElementById('display');
+let keys = document.querySelectorAll('.keys button');
 
-var calculator = {
+let calculator = {
     displayValue: '0',
     firstOperand: null,
     secondOperand: null,
     operator: null,
-};
+    isDecimal: false,
 
-keys.forEach((key) => {
-    key.addEventListener('click', (e) => {
-        var keyValue = e.target.textContent;
+    init() {
+        keys.forEach(key => {
+            key.addEventListener('click', event => {
+                this.handleKeyClick(event.target);
+            });
+        });
+    },
 
-        if (keyValue === 'C') {
-            calculator.displayValue = '0';
-            calculator.firstOperand = null;
-            calculator.secondOperand = null;
-            calculator.operator = null;
-        } else if (keyValue === '=') {
-            calculator.secondOperand = parseFloat(calculator.displayValue);
-            var result = calculate(calculator.firstOperand, calculator.secondOperand, calculator.operator);
-            calculator.displayValue = result.toString();
-            calculator.firstOperand = null;
-            calculator.secondOperand = null;
-            calculator.operator = null;
-        } else if (keyValue === '+' || keyValue === '-' || keyValue === '*' || keyValue === '/') {
-            calculator.firstOperand = parseFloat(calculator.displayValue);
-            calculator.operator = keyValue;
-            calculator.displayValue = '0';
+    handleKeyClick(key) {
+        switch (key.id) {
+            case 'clear':
+                this.clear();
+                break;
+            case 'equals':
+                this.calculate();
+                break;
+            default:
+                this.appendKey(key.id);
+        }
+    },
+
+    appendKey(key) {
+        if (this.displayValue === '0') {
+            this.displayValue = key;
         } else {
-            if (calculator.displayValue === '0') {
-                calculator.displayValue = keyValue;
-            } else {
-                calculator.displayValue += keyValue;
-            }
+            this.displayValue += key;
         }
 
-        display.value = calculator.displayValue;
-    });
-});
+        display.value = this.displayValue;
+    },
 
-function calculate(a, b, operator) {
-    switch (operator) {
-        case '+':
-            return a + b;
-        case '-':
-            return a - b;
-        case '*':
-            return a * b;
-        case '/':
-            return a / b;
-        default:
-            return 0;
+    clear() {
+        this.displayValue = '0';
+        this.firstOperand = null;
+        this.secondOperand = null;
+        this.operator = null;
+        this.isDecimal = false;
+        display.value = this.displayValue;
+    },
+
+    calculate() {
+        if (this.operator) {
+            this.secondOperand = parseFloat(this.displayValue);
+            let result = 0;
+
+            switch (this.operator) {
+                case '+':
+                    result = this.firstOperand + this.secondOperand;
+                    break;
+                case '-':
+                    result = this.firstOperand - this.secondOperand;
+                    break;
+                case '*':
+                    result = this.firstOperand * this.secondOperand;
+                    break;
+                case '/':
+                    result = this.firstOperand / this.secondOperand;
+                    break;
+            }
+
+            this.displayValue = result.toString();
+            this.firstOperand = null;
+            this.secondOperand = null;
+            this.operator = null;
+            display.value = this.displayValue;
+        }
     }
-}
+};
+
+calculator.init();
