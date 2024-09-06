@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        /* Your existing CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #answer-buttons {
+            margin-top: 20px;
+        }
+
+        .btn-option {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+        }
+
+        .btn-option:hover {
+            background-color: #dee2e6;
+        }
+
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d9534f; /* Bootstrap's danger color */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz App</h1>
+        <div id="timer">Time Left: 05:00</div> <!-- Timer Display -->
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div id="answer-buttons"></div>
+        </div>
+        <button id="next-button" class="btn">Next</button>
+    </div>
+
+    <script src="index.js" defer></script>
+</body>
+</html>

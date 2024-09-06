@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stylo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: linear-gradient(to right, #1e3c72, #2a5298);
+    --secondary-bg: rgba(30, 60, 114, 0.9);
+    --text-color: #fff;
+    --highlight-color: #ffeb3b;
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+}
+
+.navbar {
+    background: var(--primary-bg);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background var(--transition-speed) ease;
+}
+
+.navbar.scrolled {
+    background: var(--secondary-bg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--highlight-color);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg);
+    z-index: 999;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 60px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 15px;
+        display: block;
+    }
+}
+
+/* CARD CODE */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+.containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: perspective(1000px);
+}
+
+.card:hover {
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+}
+
+.card-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.card-description {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 24px;
+    }
+    
+    .card-description {
+        font-size: 14px;
+    }
+    
+    .card-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}   
+
+#btn:hover{
+    background-color: #fb8500;
+    transform: scale(1.05);
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+#Dashboard:hover{
+    background-color: #fb8500;
+    transform: scale(1.05);
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main Navigation">
+            <div class="container">
+                <a href="./index.html" class="logo" aria-label="Homepage">OLX</a>
+                <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="nav-links">
+                    <!-- <span class="visually-hidden">Toggle navigation</span> -->
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links" id="nav-links" role="menubar">
+                    <li><a href="./index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <!-- <li><a href="#" role="menuitem" tabindex="0">About</a></li> -->
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <!-- <li><a href="#" role="menuitem" tabindex="0">Contact</a></li> -->
+                    <button id="btn" type="button" class="btn btn-warning">Login</button>
+                    <button id="Dashboard" type="button" class="btn btn-warning">Dashboard</button>
+                </ul>
+            </div>
+            <div class="overlay" id="overlay" aria-hidden="true"></div>
+        </nav>
+    </header>
+
+    <!-- CARD CODE -->
+    <div class="containe">
+        <div class="card" id="interactive-card">
+            <div class="card-header">
+                <div class="card-img-wrapper">
+                    <img src="https://www.hrkatha.com/wp-content/uploads/2023/06/OLX.png" alt="Card Image" class="card-img" id="card-img">
+                </div>
+                <div class="card-overlay"></div>
+                <div class="card-info" id="card-info">
+                    <h2 class="card-title">Premium Card Design</h2>
+                    <p class="card-description">Experience top-notch design and functionality with this interactive card. Includes advanced animations and smooth transitions for a luxurious feel.</p>
+                    <a href="#" class="card-button" id="card-button">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script>
+        let Dashboard = document.getElementById('Dashboard')
+        if (Dashboard) {
+            Dashboard.addEventListener('click' , ()=>{
+                location.href = "userdashboard.html"
+            })
+        }
+        let btn = document.getElementById('btn')
+        if (btn) {
+            btn.addEventListener('click' , ()=>{
+                location.href = 'signup.html'
+            })
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('overlay');
+    const navbar = document.querySelector('.navbar');
+
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', function() {
+        const isActive = navLinks.classList.toggle('active');
+        overlay.classList.toggle('active', isActive);
+        mobileMenu.setAttribute('aria-expanded', isActive);
+    });
+
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+    });
+
+    // Change navbar background on scroll using Intersection Observer
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.intersectionRatio < 1) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }, { threshold: [1] });
+
+    observer.observe(document.querySelector('header'));
+
+    // Close menu on ESC key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            mobileMenu.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Keyboard navigation: Focus menu items
+    navLinks.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            const next = event.target.closest('li').nextElementSibling;
+            if (next && next.querySelector('a')) {
+                next.querySelector('a').focus();
+            }
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            const prev = event.target.closest('li').previousElementSibling;
+            if (prev && prev.querySelector('a')) {
+                prev.querySelector('a').focus();
+            }
+        }
+    });
+});
+
+// CARD CODE
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.getElementById('interactive-card');
+    const cardImg = document.getElementById('card-img');
+    const cardInfo = document.getElementById('card-info');
+    const cardButton = document.getElementById('card-button');
+
+    card.addEventListener('mouseenter', () => {
+        cardImg.style.transform = 'scale(1.1)';
+        cardInfo.style.transform = 'translateY(0)';
+        cardInfo.style.opacity = '1';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        cardImg.style.transform = 'scale(1)';
+        cardInfo.style.transform = 'translateY(100%)';
+        cardInfo.style.opacity = '0';
+    });
+
+    cardButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action for demo purposes
+        card.classList.toggle('expanded');
+        if (card.classList.contains('expanded')) {
+            cardButton.textContent = 'Close';
+        } else {
+            cardButton.textContent = 'Discover More';
+        }
+    });
+});
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

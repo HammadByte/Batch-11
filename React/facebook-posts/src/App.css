@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* src/App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.post-box {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.posts {
+  margin-top: 20px;
+}
+
+.post-card {
+  max-width: 600px;
+  margin: 10px auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-info p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.post-content p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.post-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-footer button {
+  border: 1px solid #ccc;
+  background: none;
+  color: #007bff;
+  border-radius: 5px;
+}
+
+.post-footer button:hover {
+  background-color: #f1f1f1;
+}

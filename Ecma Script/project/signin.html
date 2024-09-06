@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.signin-form h2 {
+    margin-bottom: 20px;
+}
+
+.signin-form label {
+    margin-bottom: 10px;
+}
+
+.signin-form input[type="email"],.signin-form input[type="password"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.signin-form input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signin-form input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.signin-form p {
+    margin-top: 20px;
+}
+
+.signin-form a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.signin-form a:hover {
+    color: #3e8e41;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+   .container {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+   .container {
+        max-width: 250px;
+    }
+   .signin-form input[type="email"],.signin-form input[type="password"] {
+        height: 30px;
+    }
+   .signin-form input[type="submit"] {
+        height: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signin-form">
+            <h2>Sign In</h2>
+       
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input id="signin" type="submit" value="Sign In">
+                <p>Forgot password? <a href="file:///D:/HAMMAD%20BATCH%2011/JAVA%20SCRIP/Ecma%20Script/project/index.html">Reset password</a></p>
+                <p>Don't have an account? <a href="file:///D:/HAMMAD%20BATCH%2011/JAVA%20SCRIP/Ecma%20Script/project/signup.html">Sign Up</a></p>
+       
+        </div>
+    </div>
+    <script>
+        let signin = document.getElementById('signin')
+        signin.addEventListener("click" , ()=>{
+            location.href = 'signup.html'
+        })
+    </script>
+</body>
+</html>

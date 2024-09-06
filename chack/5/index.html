@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  :root {
+    --size: 150px; /* Reduced size for smaller display */
+    --duration: 8s; /* Shortened duration for faster animation */
+    --perspective: 1000px;
+    --shadow-intensity: 0.4;
+    --bg-color: #121212;
+    --accent-color: #03a9f4; /* Vibrant blue accent color */
+  }
+
+  body {
+    display: flex;
+    justify-content: flex-end; /* Align to right side */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: #e0e0e0; /* Light text color for contrast */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+  }
+
+  h1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #e0e0e0;
+    font-size: 2em; /* Adjusted font size */
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .container {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    perspective: var(--perspective); /* Set perspective for 3D effect */
+    margin-right: 20px; /* Margin to ensure space on the right */
+  }
+
+  div {
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    background-size: cover; /* Ensure image covers the div */
+    background-position: center; /* Center the image */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, var(--shadow-intensity));
+    animation: example var(--duration) infinite alternate;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    transform-origin: center center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+  }
+
+  div:hover {
+    transform: scale(1.1) translateZ(30px); /* Subtle scale and Z-axis translation */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+  }
+
+  @keyframes example {
+    0% {
+      background-image: url('https://creativedesigncrew.com/assets/logo-design/images/sloge01.webp');
+      background-size: cover; /* Ensure image covers the div */
+      transform: translateZ(0) scale(1);
+      opacity: 1; /* Full opacity for clarity */
+    }
+    25% {
+      background-image: url('https://creativedesigncrew.com/assets/logo-design/images/sloge02.webp');
+      background-size: cover;
+      transform: translateZ(30px) scale(1.05);
+      opacity: 1;
+    }
+    50% {
+      background-image: url('https://creativedesigncrew.com/assets/logo-design/images/sloge03.webp');
+      background-size: cover;
+      transform: translateZ(60px) scale(1);
+      opacity: 1;
+    }
+    75% {
+      background-image: url('https://creativedesigncrew.com/assets/logo-design/images/sloge04.webp');
+      background-size: cover;
+      transform: translateZ(30px) scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      background-image: url('https://creativedesigncrew.com/assets/logo-design/images/sloge01.webp');
+      background-size: cover;
+      transform: translateZ(0) scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Enhanced CSS Animation</h1>
+
+<div class="container">
+  <div></div>
+</div>
+
+</body>
+</html>

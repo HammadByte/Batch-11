@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Single Row Cards</title>
+    <style>
+        /* Reset basic styles */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #e0f2f1; /* Light green background for a fresh look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem; /* Adjusted for better responsiveness */
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: nowrap; /* Ensure cards stay in one row */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.333% - 1rem); /* Ensure three cards per row with space */
+    max-width: 340px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    position: relative;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-header:hover .card-image {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+.card-body {
+    padding: 1rem;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); Subtle gradient background
+}
+
+.card-title {
+    font-size: 1.5rem; /* Slightly smaller font size */
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.card-description {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.card-button {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Vibrant gradient button */
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-button:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+}
+
+.card-footer {
+    background: #ffffff;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.card-date {
+    color: #999;
+    font-size: 0.875rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .card {
+        flex: 1 1 auto; /* Adjust card size to fit width */
+        margin-bottom: 1rem; /* Add spacing between stacked cards */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="Card Image 1" class="card-image">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Card Title 1</h2>
+                <p class="card-description">This description provides a concise overview of the first card's content, highlighting key features and benefits.</p>
+                <button class="card-button">Discover More</button>
+            </div>
+            <div class="card-footer">
+                <span class="card-date">August 4, 2024</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="Card Image 2" class="card-image">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Card Title 2</h2>
+                <p class="card-description">Here is some insightful text for the second card, aimed at engaging users and drawing attention to its content.</p>
+                <button class="card-button">Discover More</button>
+            </div>
+            <div class="card-footer">
+                <span class="card-date">August 5, 2024</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="Card Image 3" class="card-image">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Card Title 3</h2>
+                <p class="card-description">A captivating description for the third card, aimed at highlighting its unique aspects and encouraging user interaction.</p>
+                <button class="card-button">Discover More</button>
+            </div>
+            <div class="card-footer">
+                <span class="card-date">August 6, 2024</span>
+            </div>
+        </div>
+    </div>
+    <script>
+// Example JavaScript code for future enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Cards loaded and ready!');
+});
+
+    </script>
+</body>
+</html>
