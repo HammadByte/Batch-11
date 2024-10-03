@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Creative Design Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="bg-pink-100">
+<div class="container mx-auto p-4">
+    <!-- Header Section -->
+    <div class="text-center py-10">
+        <div class="inline-block bg-white p-6 rounded-lg shadow-lg relative transition-all hover:shadow-xl">
+            <span class="absolute top-0 left-0 bg-pink-500 text-white px-3 py-1 rounded-br-lg">
+                Welcome
+            </span>
+            <h1 class="text-4xl font-bold mt-4">
+                I am a 
+                <span class="text-pink-500 role-text" id="dynamic-role"></span>
+            </h1>
+            <p class="text-gray-600 mt-2">
+                I'm Areebanaz, a creative Product Designer. I've been helping businesses solve their problems with my designs for 2 years.
+            </p>
+            <div class="mt-4">
+                <button class="bg-pink-500 text-white px-6 py-2 rounded-full mr-2 transition-all hover:bg-pink-600">
+                    Contact Me
+                </button>
+                <button class="text-pink-500 border border-pink-500 px-6 py-2 rounded-full transition-all hover:bg-pink-500 hover:text-white">
+                    <a href="portfolio.html">
+                    View Portfolio</a>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="mt-6">
+                <img alt="Profile picture" class="mx-auto rounded-full border-4 border-pink-500 transition-all hover:scale-110" height="150" src="./image/profile.jpg" width="150"/>
+            </div>
+        </div>
+    </div>
+    <!-- Statistics Section -->
+    <div class="flex justify-around text-center py-10">
+        <div>
+            <h2 class="text-3xl font-bold text-pink-500">80+</h2>
+            <p class="text-gray-600">Satisfied clients</p>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-pink-500">200+</h2>
+            <p class="text-gray-600">Projects completed</p>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-pink-500">99+</h2>
+            <p class="text-gray-600">Reviews given</p>
+        </div>
+    </div>
+    <!-- Skills Section -->
+    <div class="bg-white p-10 rounded-lg shadow-lg my-10 transition-all hover:shadow-xl">
+        <h2 class="text-2xl font-bold text-center mb-6">
+            Why Hire Me For Your Next
+            <span class="text-pink-500">Project?</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center transition-all hover:scale-105">
+                <h3 class="text-xl font-bold">Visual Design</h3>
+                <p class="text-gray-600">Create user interface designs with unique & modern ideas.</p>
+            </div>
+            <div class="text-center transition-all hover:scale-105">
+                <h3 class="text-xl font-bold">UX Research</h3>
+                <p class="text-gray-600">Conduct user research to understand user needs.</p>
+            </div>
+            <div class="text-center transition-all hover:scale-105">
+                <h3 class="text-xl font-bold">Design Prototype</h3>
+                <p class="text-gray-600">Create advanced design prototypes for your product.</p>
+            </div>
+        </div>
+        <div class="text-center mt-6">
+            <button class="bg-pink-500 text-white px-6 py-2 rounded-full transition-all hover:bg-pink-600">
+                Hire Me
+            </button>
+        </div>
+    </div>
+    <!-- Projects Section -->
+    <div class="bg-white p-10 rounded-lg shadow-lg my-10 transition-all hover:shadow-xl">
+        <h2 class="text-2xl font-bold text-center mb-6">
+            My Creative Works
+            <span class="text-pink-500">Latest Projects</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-dots p-4 rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer" onclick="openModal('https://storage.googleapis.com/a1aa/image/FWhTPzG0na4eFygvI7lifmZKJE0NhUjutgbpe4iNFEqkw8FnA.jpg')">
+                <img alt="Project 1" class="rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/FWhTPzG0na4eFygvI7lifmZKJE0NhUjutgbpe4iNFEqkw8FnA.jpg" width="300"/>
+            </div>
+            <div class="bg-dots p-4 rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer" onclick="openModal('https://storage.googleapis.com/a1aa/image/ltCYqq6nfBz7GqoPCgf6I1m1G7ebNB9ea2j1XxGaE1TYh5LOB.jpg')">
+                <img alt="Project 2" class="rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/ltCYqq6nfBz7GqoPCgf6I1m1G7ebNB9ea2j1XxGaE1TYh5LOB.jpg" width="300"/>
+            </div>
+            <div class="bg-dots p-4 rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer" onclick="openModal('https://storage.googleapis.com/a1aa/image/qJmLNDA8QCpjE1snkFObtfhbPFJSFI9UGt77KVubrC4KMfiTA.jpg')">
+                <img alt="Project 3" class="rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/qJmLNDA8QCpjE1snkFObtfhbPFJSFI9UGt77KVubrC4KMfiTA.jpg" width="300"/>
+            </div>
+        </div>
+        <div class="text-center mt-6">
+            <button class="bg-pink-500 text-white px-6 py-2 rounded-full transition-all hover:bg-pink-600">
+                Show More
+            </button>
+        </div>
+    </div>
+    <!-- Testimonials Section -->
+    <div class="bg-white p-10 rounded-lg shadow-lg my-10 transition-all hover:shadow-xl">
+        <h2 class="text-2xl font-bold text-center mb-6">
+            Our Customers Say
+            <span class="text-pink-500">Something About Us</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center">
+                <p class="text-gray-600">"The best designer I've ever worked with. Highly recommended!"</p>
+                <p class="text-pink-500 font-bold mt-2">- John Doe</p>
+            </div>
+            <div class="text-center">
+                <p class="text-gray-600">"Amazing work! Delivered on time and exceeded expectations."</p>
+                <p class="text-pink-500 font-bold mt-2">- Jane Smith</p>
+            </div>
+            <div class="text-center">
+                <p class="text-gray-600">"Professional and creative. Will hire again for future projects."</p>
+                <p class="text-pink-500 font-bold mt-2">- Emily Johnson</p>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <div class="bg-white p-10 rounded-lg shadow-lg my-10 transition-all hover:shadow-xl">
+        <h2 class="text-2xl font-bold text-center mb-6">
+            Let's Discuss
+            <span class="text-pink-500">Your Project</span>
+        </h2>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label class="block text-gray-600 mb-2">Name</label>
+                <input class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Your Name" type="text" required/>
+            </div>
+            <div>
+                <label class="block text-gray-600 mb-2">Email</label>
+                <input class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Your Email" type="email" required/>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-gray-600 mb-2">Message</label>
+                <textarea class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Your Message" rows="4" required></textarea>
+            </div>
+            <div class="md:col-span-2 text-center">
+                <button type="submit" class="bg-pink-500 text-white px-6 py-2 rounded-full transition-all hover:bg-pink-600">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Image Viewing -->
+<div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

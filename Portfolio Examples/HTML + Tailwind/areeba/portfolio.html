@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Logo Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Georgia', serif; /* Elegant serif font */
+            background-color: #f9f9f9; /* Soft background */
+            color: #333; /* Dark text for contrast */
+            line-height: 1.6; /* Improved readability */
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.85); /* Darker modal background */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+            border-radius: 12px; /* Rounded corners */
+            transition: transform 0.3s ease;
+        }
+        .modal-image {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: rgb(245, 12, 51);
+            cursor: pointer;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        .arrow:hover {
+            transform: scale(1.1); /* Scale on hover */
+        }
+        .left-arrow {
+            left: 20px;
+        }
+        .right-arrow {
+            right: 20px;
+        }
+        /* Portfolio image styles */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            border-radius: 12px; /* Rounded corners */
+        }
+        .plus-sign {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            color: rgb(245, 12, 51);
+            display: none;
+            opacity: 0.8; /* Semi-transparent */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 50%; /* Circular background */
+            padding: 8px;
+        }
+        .portfolio-item:hover .plus-sign {
+            display: block;
+            transform: scale(1.1); /* Scale up on hover */
+            opacity: 1; /* Fully visible */
+        }
+        /* Category item styles */
+        .category-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .minus-sign {
+            display: none;
+            margin-right: 10px;
+            color: rgb(245, 12, 51);
+        }
+        .category-item:hover .minus-sign {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto py-10">
+        <div class="flex flex-wrap">
+            <!-- Sidebar -->
+            <div class="w-full md:w-1/4 p-5">
+                <h1 class="text-4xl font-bold mb-6 text-center md:text-left text-gray-800">Luxury Logo Portfolio</h1>
+                <ul class="space-y-3">
+                    <li class="category-item" onclick="showImages('Construction')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Construction</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Counselling')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Counselling</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Logistics')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Logistics</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Mental Health')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Mental Health</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Ranch Farm')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Ranch Farm</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Landscaping')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Landscaping</span>
+                    </li>
+                    <li class="category-item" onclick="showImages('Cleaning')">
+                        <span class="minus-sign">-</span>
+                        <span class="text-gray-700 hover:text-pink-600">Cleaning</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5">
+                <!-- Portfolio items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <img id="modalImage" class="modal-image" src="" alt="Modal Image" />
+            <div class="arrow left-arrow" onclick="changeImage(-1)">&#10094;</div>
+            <div class="arrow right-arrow" onclick="changeImage(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <script>
+        const images = {
+            'Construction': [
+                "https://storage.googleapis.com/a1aa/image/qTfw4WaY7KyzMSlcyIaZFJqSSpoEObhg1PyKE6Q60cWF7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/qTfw4WaY7KyzMSlcyIaZFJqSSpoEObhg1PyKE6Q60cWF7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/qTfw4WaY7KyzMSlcyIaZFJqSSpoEObhg1PyKE6Q60cWF7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/qTfw4WaY7KyzMSlcyIaZFJqSSpoEObhg1PyKE6Q60cWF7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/qTfw4WaY7KyzMSlcyIaZFJqSSpoEObhg1PyKE6Q60cWF7fiTA.jpg",  
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                // Add more construction images here
+            ],
+            'Counselling': [
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                // Add more counselling images here
+            ],
+            'Logistics': [
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+                "https://storage.googleapis.com/a1aa/image/ATpfK1BRcmwefIPUqxwate5KLA6XIL5ShCcdapGoPeREwev4E.jpg",
+
+                "https://storage.googleapis.com/a1aa/image/T4hkwzGXV3pSPp6ofsbebDUpeetnDTlkJjHFHZFDiFEEYfXcC.jpg",
+                // Add more logistics images here
+            ],
+            'Mental Health': [
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+                "https://storage.googleapis.com/a1aa/image/3OGXQ7jAJMorEVyb5uRp8ofvr1UEXRQyzn4ZSUrnouYE7fiTA.jpg",
+
+
+                // Add mental health images here
+            ],
+            'Ranch Farm': [
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/FQW2WvTzJ4pDAdjPS71rX0JSO9V94idervhxfQITCGeIsfLOB.jpg",
+                // Add ranch farm images here
+            ],
+            'Landscaping': [
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",
+                // Add landscaping images here
+            ],
+            'Cleaning': [
+                "https://storage.googleapis.com/a1aa/image/RashK27YaS7HL19waoEYhR2Ses7FuGhyJ5CoSAeCTfWHsfLOB.jpg",  
+                // Add cleaning images here
+            ],
+        };
+
+        let currentIndex = 0;
+
+        function showImages(category) {
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            portfolioGrid.innerHTML = ''; // Clear previous images
+
+            const categoryImages = images[category] || [];
+            // Show the first 6 images for the selected category
+            for (let i = 0; i < Math.min(categoryImages.length, 6); i++) {
+                const div = document.createElement('div');
+                div.className = 'portfolio-item bg-white cursor-pointer';
+                div.onclick = () => openModal(i);
+                div.innerHTML = `
+                    <img src="${categoryImages[i]}" alt="${category} Logo" />
+                    <span class="plus-sign">+</span>
+                `;
+                portfolioGrid.appendChild(div);
+            }
+        }
+
+        function openModal(index) {
+            const categoryImages = images[currentCategory] || [];
+            currentIndex = index;
+            document.getElementById("modalImage").src = categoryImages[currentIndex];
+            document.getElementById("myModal").style.display = "flex"; // Show modal
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function changeImage(direction) {
+            const categoryImages = images[currentCategory] || [];
+            currentIndex = (currentIndex + direction + categoryImages.length) % categoryImages.length;
+            document.getElementById("modalImage").src = categoryImages[currentIndex];
+        }
+
+        // Close modal on click outside of image
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        let currentCategory = 'Construction'; // Default category
+        showImages(currentCategory);
+    </script>
+</body>
+</html>
