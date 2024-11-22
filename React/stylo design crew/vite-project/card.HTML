@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a2a4a;
+            padding: 10px 20px; /* Reduced padding */
+            color: white;
+            border-radius: 10px; /* Slightly smaller border radius */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px; /* Fixed width for smaller size */
+            width: 100%;
+            position: relative; /* Add relative positioning */
+        }
+
+        .banner .left-section,
+        .banner .right-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner .left-section img,
+        .banner .right-section img {
+            margin-right: 10px; /* Reduced margin */
+            border-radius: 8px;
+        }
+
+        .banner .left-section {
+            flex: 1;
+        }
+
+        .banner .left-section h1 {
+            font-size: 18px; /* Reduced font size */
+            margin: 0;
+            font-weight: bold;
+            color: #f8f8f8;
+        }
+
+        .banner .left-section h2 {
+            font-size: 14px; /* Reduced font size */
+            margin: 5px 0 0;
+            color: #c6c6c6;
+        }
+
+        .banner .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 15px; /* Reduced margin */
+        }
+
+        .banner .contact-info div {
+            margin-right: 10px; /* Reduced margin */
+            font-size: 14px; /* Reduced font size */
+            color: #f8f8f8;
+        }
+
+        .banner .contact-info button {
+            background-color: white;
+            color: #0a2a4a;
+            border: 2px solid #0a2a4a;
+            border-radius: 20px;
+            padding: 8px 15px; /* Reduced padding */
+            font-size: 14px; /* Smaller font size */
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner .contact-info button:hover {
+            background-color: #0a2a4a;
+            color: white;
+        }
+
+        /* Special offer image positioned fixed and centered */
+        .special-offer {
+            position: fixed;
+            top: 50%; /* Centers vertically */
+            left: 50%; /* Centers horizontally */
+            transform: translate(-50%, -50%); /* Adjust the position to truly center it */
+            z-index: 1000; /* Ensure it appears above other content */
+            max-width: 200px; /* Adjust image width */
+            width: 100%;
+        }
+
+        .special-offer img {
+            width: 100%; /* Make the image width responsive */
+            height: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="left-section">
+            <img alt="Design samples on the left" height="60" src="https://creativedesigncrew.com/assets/images/webp/cta-1.webp" width="60" />
+            <div>
+                <h1>Avail Creative Design</h1>
+                <h2>Packages At</h2>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="contact-info">
+                <img alt="Special Offer" src="https://creativedesigncrew.com/assets/images/webp/cta-center-img.webp"  width="100" height="100"/>
+                <div>Get In Touch With Our Support Agent Or</div>
+                <button>+1 (855) 857 5569</button>
+                <button>Live Chat</button>
+            </div>
+            <img alt="Design samples on the right" height="60" src="https://creativedesigncrew.com/assets/images/webp/cta-2.webp" width="60" />
+        </div>
+    </div>
+
+    <!-- Special offer as an image with fixed position centered -->
+    <!-- <div class="special-offer">
+        <img alt="Special Offer" src="https://via.placeholder.com/300x100?text=Special+Offer" />
+    </div> -->
+</body>
+
+</html>
