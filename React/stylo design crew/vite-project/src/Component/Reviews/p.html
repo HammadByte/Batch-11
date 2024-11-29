@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Logo Portfolio</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .selected {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div id="root" class="flex p-8"></div>
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div className="flex w-full">
+                    <div className="w-1/4 pr-8">
+                        <h1 className="text-2xl font-bold mb-4">Logo Portfolio</h1>
+                        <ul className="space-y-2">
+                            <li>Construction</li>
+                            <li>Counselling</li>
+                            <li className="selected">Logistics</li>
+                            <li>Mental Health</li>
+                            <li>Ranch Farm</li>
+                            <li>Landscaping</li>
+                            <li>Cleaning</li>
+                            <li>Accounting & Finance</li>
+                            <li>Healthcare</li>
+                            <li>Ecommerce Businesses</li>
+                            <li>Transportation & Logistics</li>
+                            <li>Business Consulting</li>
+                            <li>Recreation & Travel</li>
+                            <li>Real Estate</li>
+                            <li>Entertainment</li>
+                            <li>Wellness & Fitness</li>
+                            <li>HVAC</li>
+                            <li>Solar Energy/Solar Products</li>
+                            <li>Video Production</li>
+                        </ul>
+                    </div>
+                    <div className="w-3/4 grid grid-cols-3 gap-4">
+                        <img src="https://placehold.co/200x200" alt="Logo 1" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 2" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 3" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 4" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 5" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 6" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 7" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 8" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 9" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 10" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 11" className="w-full h-auto"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 12" className="w-full h-auto"/>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

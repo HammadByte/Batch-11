@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
-
+        
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false); // State to manage the services dropdown visibility on mobile
 
@@ -24,13 +24,15 @@ export default function Navbar() {
     return (
 
         <>
-            <nav className="flex items-center justify-between p-4 bg-white-900 relative">
+            <nav className="flex items-center justify-between p-4 bg-blue-950 relative text-white">
                 <div className="flex items-center space-x-4">
-                    <img src="https://placehold.co/50x50" alt="Company Logo" className="h-8" />
-                    <div>
+                    <Link to={"/"}>
+                    <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/625f1779b050587e24ccb18b/0x0.png" alt="Company Logo" className="h-10 w-40" />
+                    </Link>
+                    {/* <div>
                         <span className="text-xl font-bold">pinki</span>
                         <span className="text-sm block">Design Crew</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Desktop and Tablet Menu (hidden on mobile) */}

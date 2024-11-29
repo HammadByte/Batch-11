@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Logo Portfolio</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .selected {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        li {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        li:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div id="root" class="flex p-8"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const App = () => {
+            const [selectedItem, setSelectedItem] = useState('Logistics');
+
+            const menuItems = [
+                'Construction', 'Counselling', 'Logistics', 'Mental Health', 'Ranch Farm', 'Landscaping', 'Cleaning',
+                'Accounting & Finance', 'Healthcare', 'Ecommerce Businesses', 'Transportation & Logistics',
+                'Business Consulting', 'Recreation & Travel', 'Real Estate', 'Entertainment', 'Wellness & Fitness',
+                'HVAC', 'Solar Energy/Solar Products', 'Video Production'
+            ];
+
+            return (
+                <div className="flex w-full">
+                    <div className="w-1/4 pr-8">
+                        <h1 className="text-2xl font-bold mb-4">Logo Portfolio</h1>
+                        <ul className="space-y-2">
+                            {menuItems.map(item => (
+                                <li
+                                    key={item}
+                                    className={selectedItem === item ? 'selected' : ''}
+                                    onClick={() => setSelectedItem(item)}
+                                >
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="w-3/4 grid grid-cols-3 gap-4">
+                        <img src="https://placehold.co/200x200" alt="Logo 1" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 2" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 3" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 4" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 5" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 6" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 7" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 8" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 9" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 10" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 11" className="w-full h-auto rounded shadow-md"/>
+                        <img src="https://placehold.co/200x200" alt="Logo 12" className="w-full h-auto rounded shadow-md"/>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

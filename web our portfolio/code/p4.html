@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>Logo Portfolio</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .selected {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        li {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        li:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div id="root" class="flex p-8"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const App = () => {
+            const [selectedItem, setSelectedItem] = useState('Logistics');
+
+            const menuItems = [
+                'Construction', 'Counselling', 'Logistics', 'Mental Health', 'Ranch Farm', 'Landscaping', 'Cleaning',
+                'Accounting & Finance', 'Healthcare', 'Ecommerce Businesses', 'Transportation & Logistics',
+                'Business Consulting', 'Recreation & Travel', 'Real Estate', 'Entertainment', 'Wellness & Fitness',
+                'HVAC', 'Solar Energy/Solar Products', 'Video Production'
+            ];
+
+            const images = {
+                'Construction': [
+                    'https://placehold.co/200x200?text=Construction+1',
+                    'https://placehold.co/200x200?text=Construction+2',
+                    'https://placehold.co/200x200?text=Construction+3'
+                ],
+                'Counselling': [
+                    'https://placehold.co/200x200?text=Counselling+1',
+                    'https://placehold.co/200x200?text=Counselling+2',
+                    'https://placehold.co/200x200?text=Counselling+3'
+                ],
+                'Logistics': [
+                    'https://placehold.co/200x200?text=Logistics+1',
+                    'https://placehold.co/200x200?text=Logistics+2',
+                    'https://placehold.co/200x200?text=Logistics+3'
+                ],
+                'Mental Health': [
+                    'https://placehold.co/200x200?text=Mental+Health+1',
+                    'https://placehold.co/200x200?text=Mental+Health+2',
+                    'https://placehold.co/200x200?text=Mental+Health+3'
+                ],
+                'Ranch Farm': [
+                    'https://placehold.co/200x200?text=Ranch+Farm+1',
+                    'https://placehold.co/200x200?text=Ranch+Farm+2',
+                    'https://placehold.co/200x200?text=Ranch+Farm+3'
+                ],
+                'Landscaping': [
+                    'https://placehold.co/200x200?text=Landscaping+1',
+                    'https://placehold.co/200x200?text=Landscaping+2',
+                    'https://placehold.co/200x200?text=Landscaping+3'
+                ],
+                'Cleaning': [
+                    'https://placehold.co/200x200?text=Cleaning+1',
+                    'https://placehold.co/200x200?text=Cleaning+2',
+                    'https://placehold.co/200x200?text=Cleaning+3'
+                ],
+                'Accounting & Finance': [
+                    'https://placehold.co/200x200?text=Accounting+1',
+                    'https://placehold.co/200x200?text=Accounting+2',
+                    'https://placehold.co/200x200?text=Accounting+3'
+                ],
+                'Healthcare': [
+                    'https://placehold.co/200x200?text=Healthcare+1',
+                    'https://placehold.co/200x200?text=Healthcare+2',
+                    'https://placehold.co/200x200?text=Healthcare+3'
+                ],
+                'Ecommerce Businesses': [
+                    'https://placehold.co/200x200?text=Ecommerce+1',
+                    'https://placehold.co/200x200?text=Ecommerce+2',
+                    'https://placehold.co/200x200?text=Ecommerce+3'
+                ],
+                'Transportation & Logistics': [
+                    'https://placehold.co/200x200?text=Transportation+1',
+                    'https://placehold.co/200x200?text=Transportation+2',
+                    'https://placehold.co/200x200?text=Transportation+3'
+                ],
+                'Business Consulting': [
+                    'https://placehold.co/200x200?text=Consulting+1',
+                    'https://placehold.co/200x200?text=Consulting+2',
+                    'https://placehold.co/200x200?text=Consulting+3'
+                ],
+                'Recreation & Travel': [
+                    'https://placehold.co/200x200?text=Recreation+1',
+                    'https://placehold.co/200x200?text=Recreation+2',
+                    'https://placehold.co/200x200?text=Recreation+3'
+                ],
+                'Real Estate': [
+                    'https://placehold.co/200x200?text=Real+Estate+1',
+                    'https://placehold.co/200x200?text=Real+Estate+2',
+                    'https://placehold.co/200x200?text=Real+Estate+3'
+                ],
+                'Entertainment': [
+                    'https://placehold.co/200x200?text=Entertainment+1',
+                    'https://placehold.co/200x200?text=Entertainment+2',
+                    'https://placehold.co/200x200?text=Entertainment+3'
+                ],
+                'Wellness & Fitness': [
+                    'https://placehold.co/200x200?text=Wellness+1',
+                    'https://placehold.co/200x200?text=Wellness+2',
+                    'https://placehold.co/200x200?text=Wellness+3'
+                ],
+                'HVAC': [
+                    'https://placehold.co/200x200?text=HVAC+1',
+                    'https://placehold.co/200x200?text=HVAC+2',
+                    'https://placehold.co/200x200?text=HVAC+3'
+                ],
+                'Solar Energy/Solar Products': [
+                    'https://placehold.co/200x200?text=Solar+1',
+                    'https://placehold.co/200x200?text=Solar+2',
+                    'https://placehold.co/200x200?text=Solar+3'
+                ],
+                'Video Production': [
+                    'https://placehold.co/200x200?text=Video+1',
+                    'https://placehold.co/200x200?text=Video+2',
+                    'https://placehold.co/200x200?text=Video+3'
+                ]
+            };
+
+            return (
+                <div className="flex w-full">
+                    <div className="w-1/4 pr-8">
+                        <h1 className="text-2xl font-bold mb-4">Logo Portfolio</h1>
+                        <ul className="space-y-2">
+                            {menuItems.map(item => (
+                                <li
+                                    key={item}
+                                    className={selectedItem === item ? 'selected' : ''}
+                                    onClick={() => setSelectedItem(item)}
+                                >
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="w-3/4 grid grid-cols-3 gap-4">
+                        {images[selectedItem].map((src, index) => (
+                            <img key={index} src={src} alt={`${selectedItem} ${index + 1}`} className="w-full h-auto rounded shadow-md"/>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
